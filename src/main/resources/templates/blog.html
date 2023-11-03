@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:insert="section/head :: head">
+    <meta charset="UTF-8">
+    <title>Blog</title>
+
+</head>
+<header th:insert="section/header ::header"></header>
+<body>
+<div class="container">
+    <h1 style="text-align: center">Posts</h1>
+    <div class="row">
+        <div th:each="post:${posts}" class="m-3 card col-lg-4 col-md-6 mb-4" style="width: 18rem;">
+            <img th:src="${post.getLinkImg()}"  class="card-img-top" th:alt="${post.getHeader()}">
+            <div class="card-body">
+                <h5 th:text="${post.getHeader()}" class="card-title"></h5>
+                <a class="btn btn-sm btn-outline-info" th:href="'/blog/'+${post.getId()}">Read more</a>
+                <a class="btn btn-sm btn-outline-warning" th:href="'/blog/'+${post.getId()} + '/edit'">Edit</a>
+                <a class="btn btn-sm btn-outline-danger" th:href="'/blog/'+${post.getId()} + '/delete'">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<footer th:insert="section/footer ::footer"></footer>
+
+</html>

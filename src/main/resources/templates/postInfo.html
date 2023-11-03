@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:insert="section/head :: head">
+    <meta charset="UTF-8">
+    <title>Post info</title>
+
+</head>
+<header th:insert="section/header ::header"></header>
+<body>
+<div class="container">
+    <h1 th:text="${post.getHeader()}"></h1>
+    <img th:src="${post.getLinkImg()}" th:alt="${post.getHeader()}">
+    <div th:text="${post.getContext()}"></div>
+</div>
+</body>
+<footer th:insert="section/footer ::footer"></footer>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:insert="section/head :: head">
+  <meta charset="UTF-8">
+  <title>New post</title>
+
+</head>
+<header th:insert="section/header ::header"></header>
+<body>
+<div class="container">
+  <form method="post" action="/blog/newPost" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label class="form-label" for="header">Header</label>
+      <input type="text" class="form-control" id="header" name="header">
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="context">Context</label>
+      <textarea class="form-control" id="context" name="context"></textarea>
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="image">Image</label>
+      <input type="file" class="form-control" id="image" name="image">
+    </div>
+    <button type="submit" class="btn btn-outline-primary">Create</button>
+  </form>
+</div>
+</body>
+<footer th:insert="section/footer ::footer"></footer>
+
+</html>
